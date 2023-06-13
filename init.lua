@@ -89,27 +89,30 @@ require('lazy').setup({
           { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
         vim.keymap.set('n', '<leader>gn', require('gitsigns').next_hunk, { buffer = bufnr, desc = '[G]o to [N]ext Hunk' })
         vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
-        vim.keymap.set('n', 'gl', require('gitsigns').blame_line, { buffer = bufnr, desc = '[G]it [L]ine Blame' })
+        vim.keymap.set('n', '<leader>gl', require('gitsigns').blame_line, { buffer = bufnr, desc = '[G]it [L]ine Blame' })
       end,
     },
   },
 
-  {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
-  },
   -- {
-  --   "catppuccin/nvim",
-  --   name = "catppuccin",
+  --   -- Theme inspired by Atom
+  --   'navarasu/onedark.nvim',
   --   priority = 1000,
   --   config = function()
-  --     vim.cmd.colorscheme 'catppuccin-macchiato'
-  --   end
+  --     -- vim.cmd.colorscheme 'onedark'
+  --   end,
   -- },
+
+  {
+    'sainnhe/gruvbox-material',
+    priority = 1000,
+    config = function()
+      vim.g.gruvbox_material_better_performance = 1
+      vim.g.gruvbox_material_background = 'hard'
+      -- vim.g.gruvbox_material_transparent_background = 1
+      vim.cmd.colorscheme 'gruvbox-material'
+    end
+  },
 
   {
     -- Set lualine as statusline
@@ -183,49 +186,49 @@ require('lazy').setup({
 -- NOTE: You can change these options as you wish!
 
 -- Set highlight on search
-vim.o.hlsearch = false
+vim.o.hlsearch       = false
 
 -- Make line numbers default
-vim.wo.number = true
+vim.wo.number        = true
 
 -- Hybrid numbers
 vim.o.relativenumber = true
-vim.o.number = true
+vim.o.number         = true
 
 -- Keep centered
-vim.o.scrolloff = 12
+vim.o.scrolloff      = 12
 
 -- Enable mouse mode
-vim.o.mouse = 'a'
+vim.o.mouse          = 'a'
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.o.clipboard = 'unnamedplus'
+vim.o.clipboard      = 'unnamedplus'
 
 -- Enable break indent
-vim.o.breakindent = true
+vim.o.breakindent    = true
 
 -- Save undo history
-vim.o.undofile = true
+vim.o.undofile       = true
 
 -- Case insensitive searching UNLESS /C or capital in search
-vim.o.ignorecase = true
-vim.o.smartcase = true
+vim.o.ignorecase     = true
+vim.o.smartcase      = true
 
 -- Keep signcolumn on by default
-vim.wo.signcolumn = 'yes'
+vim.wo.signcolumn    = 'yes'
 
 -- Decrease update time
-vim.o.updatetime = 250
-vim.o.timeout = true
-vim.o.timeoutlen = 300
+vim.o.updatetime     = 250
+vim.o.timeout        = true
+vim.o.timeoutlen     = 300
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
+vim.o.completeopt    = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
-vim.o.termguicolors = true
+vim.o.termguicolors  = true
 
 -- [[ Basic Keymaps ]]
 

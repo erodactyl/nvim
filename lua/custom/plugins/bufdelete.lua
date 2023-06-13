@@ -7,6 +7,6 @@ return {
       bufdelete.bufdelete(0, false)
     end
 
-    vim.keymap.set("n", "<leader>c", close_current, { desc = "Delete current buffer" })
+    vim.keymap.set("n", "<leader>c", close_current, { desc = "[C]lose current buffer" })
   end
 }
