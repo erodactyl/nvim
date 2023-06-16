@@ -11,10 +11,12 @@ return {
   config = function()
     require('neo-tree').setup {
       enable_diagnostics = false,
+      window = {
+        position = 'current'
+      },
       filesystem = {
         follow_current_file = true,
         use_libuv_file_watcher = true,
-        hijack_netrw_behavior = 'disabled',
         filtered_items = {
           hide_dotfiles = false,
           hide_gitignored = false,
