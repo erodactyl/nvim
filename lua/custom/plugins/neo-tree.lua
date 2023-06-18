@@ -12,7 +12,10 @@ return {
     require('neo-tree').setup {
       enable_diagnostics = false,
       window = {
-        position = 'current'
+        position = 'current',
+        mappings = {
+          ["<esc>"] = "close_window"
+        }
       },
       filesystem = {
         follow_current_file = true,
