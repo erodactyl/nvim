@@ -114,8 +114,10 @@ require('lazy').setup({
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
     opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
+      -- char = "",
+      -- context_char = "│",
+      -- show_current_context = true,
+      -- show_current_context_start = true,
     },
   },
 
@@ -166,55 +168,57 @@ require('lazy').setup({
 -- NOTE: You can change these options as you wish!
 
 -- Set highlight on search
-vim.o.hlsearch       = false
+vim.o.hlsearch        = false
 
 -- Make line numbers default
-vim.wo.number        = true
+vim.wo.number         = true
 
 -- Hybrid numbers
-vim.o.relativenumber = true
-vim.o.number         = true
+vim.o.relativenumber  = true
+vim.o.number          = true
 
 -- Keep centered
-vim.o.scrolloff      = 12
+vim.o.scrolloff       = 12
 
 -- Tab size
-vim.o.tabstop        = 2
-vim.o.shiftwidth     = 2
-vim.o.softtabstop    = 0
-vim.o.noexpandtab    = true
+vim.o.tabstop         = 4
+vim.o.shiftwidth      = 4
+vim.o.softtabstop     = 0
+vim.o.noexpandtab     = true
+vim.o.list            = true
+vim.opt.listchars.tab = "\\ \\ "
 
 -- Enable mouse mode
-vim.o.mouse          = 'a'
+vim.o.mouse           = 'a'
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.o.clipboard      = 'unnamedplus'
+vim.o.clipboard       = 'unnamedplus'
 
 -- Enable break indent
-vim.o.breakindent    = true
+vim.o.breakindent     = true
 
 -- Save undo history
-vim.o.undofile       = true
+vim.o.undofile        = true
 
 -- Case insensitive searching UNLESS /C or capital in search
-vim.o.ignorecase     = true
-vim.o.smartcase      = true
+vim.o.ignorecase      = true
+vim.o.smartcase       = true
 
 -- Keep signcolumn on by default
-vim.wo.signcolumn    = 'yes'
+vim.wo.signcolumn     = 'yes'
 
 -- Decrease update time
-vim.o.updatetime     = 250
-vim.o.timeout        = true
-vim.o.timeoutlen     = 300
+vim.o.updatetime      = 250
+vim.o.timeout         = true
+vim.o.timeoutlen      = 300
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt    = 'menuone,noselect'
+vim.o.completeopt     = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
-vim.o.termguicolors  = true
+vim.o.termguicolors   = true
 
 -- [[ Basic Keymaps ]]
 
