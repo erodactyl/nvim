@@ -8,5 +8,6 @@ return {
 
     vim.keymap.set('n', '<C-]>', "<cmd>ToggleTerm<cr>")
     vim.keymap.set('t', '<C-]>', "<cmd>ToggleTerm<cr>")
+    vim.keymap.set('t', '<esc>', "<cmd>ToggleTerm<cr>")
   end
 }
