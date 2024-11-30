@@ -6,7 +6,10 @@ return {
     vim.g.copilot_assume_mapped = true
     -- vim.g.copilot_tab_fallback = ""
 
-    local copilot_options = { silent = true, expr = true, script = true }
-    vim.api.nvim_set_keymap('i', '<C-l>', 'copilot#Accept("<CR>")', copilot_options)
+    vim.api.nvim_set_keymap('i', '<C-l>', 'copilot#Accept()', {
+      expr = true,
+      silent = true,
+      script = true,
+    })
   end,
 }

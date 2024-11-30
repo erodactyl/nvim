@@ -146,7 +146,17 @@ vim.opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = {
+  trail = '·',
+  nbsp = '␣',
+  extends = '›',
+  precedes = '‹',
+  tab = '│ ', -- A more subtle representation for tabs
+}
+
+-- Make whitespace characters less prominent
+vim.api.nvim_set_hl(0, 'Whitespace', { fg = '#4B4B4B' })
+vim.api.nvim_set_hl(0, 'NonText', { fg = '#4B4B4B' })
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
@@ -806,11 +816,12 @@ require('lazy').setup({
           --
           -- <c-l> will move you to the right of each of the expansion locations.
           -- <c-h> is similar, except moving you backwards.
-          ['<C-l>'] = cmp.mapping(function()
-            if luasnip.expand_or_locally_jumpable() then
-              luasnip.expand_or_jump()
-            end
-          end, { 'i', 's' }),
+          -- Removed for interop with Copilot
+          -- ['<C-l>'] = cmp.mapping(function()
+          --   if luasnip.expand_or_locally_jumpable() then
+          --     luasnip.expand_or_jump()
+          --   end
+          -- end, { 'i', 's' }),
           ['<C-h>'] = cmp.mapping(function()
             if luasnip.locally_jumpable(-1) then
               luasnip.jump(-1)
