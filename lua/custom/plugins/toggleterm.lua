@@ -1,13 +1,13 @@
 return {
   'akinsho/toggleterm.nvim',
-  version = "*",
-  config = function()
-    require('toggleterm').setup {
-      direction = 'float'
-    }
-
-    vim.keymap.set('n', '<C-]>', "<cmd>ToggleTerm<cr>")
-    vim.keymap.set('t', '<C-]>', "<cmd>ToggleTerm<cr>")
-    vim.keymap.set('t', '<esc>', "<cmd>ToggleTerm<cr>")
-  end
+  version = '*',
+  cmd = 'ToggleTerm',
+  keys = {
+    { '<C-]>', '<cmd>ToggleTerm<cr>', mode = 'n' },
+    { '<C-]>', '<cmd>ToggleTerm<cr>', mode = 't' },
+    { '<esc>', '<cmd>ToggleTerm<cr>', mode = 't' },
+  },
+  opts = {
+    direction = 'float',
+  },
 }
